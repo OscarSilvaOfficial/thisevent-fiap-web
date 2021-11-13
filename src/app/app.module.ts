@@ -10,13 +10,13 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatIconModule } from '@angular/material/icon'
 import { MatDividerModule } from '@angular/material/divider';
 import { EventsComponent } from './views/events/events.component';
-import { MenuComponent } from './components/menu/menu.component'
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventsComponent,
-    MenuComponent
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
