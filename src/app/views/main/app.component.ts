@@ -11,6 +11,4 @@ export class AppComponent implements OnInit {
     
   ngOnInit() {}
 
-  async allEvents(): Promise<void> {}
-
 }
