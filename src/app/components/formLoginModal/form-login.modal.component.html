@@ -1,8 +1,12 @@
-<h1 mat-dialog-title>Favorite Animal</h1>
-<mat-form-field appearance="outline">
-  <mat-label>Enter your password</mat-label>
-  <input matInput [type]="hide ? 'password' : 'text'">
-  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-  </button>
-</mat-form-field>
+<!-- <h1 mat-dialog-title>Login</h1> -->
+<form class="submit-form" #f="ngForm" (ngSubmit)="submitLoginForm(f)">
+  <div class="form__group field">
+    <input type="input" class="form__field" placeholder="E-mail" name="email" id='email' ngModel #email="ngModel" required />
+    <label for="email" class="form__label">E-mail</label>
+  </div>
+  <div class="form__group field">
+    <input type="input" class="form__field" placeholder="Senha" name="password" id='password' ngModel #password="ngModel" required />
+    <label for="password" class="form__label">Senha</label>
+  </div>
+  <input type="submit" >
+</form>

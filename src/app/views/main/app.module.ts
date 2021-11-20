@@ -13,6 +13,8 @@ import { AppComponent } from './app.component';
 import { EventsComponent } from '../events/events.component';
 import { MenuComponent } from '../../components/menu/menu.component';
 import { FormLoginModalComponent } from '../../components/formLoginModal/form-login.modal.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 const imports = [
@@ -26,6 +28,7 @@ const imports = [
   MatDividerModule,
   MatDialogModule,
   MatFormFieldModule,
+  FormsModule,
 ]
 
 const components = [

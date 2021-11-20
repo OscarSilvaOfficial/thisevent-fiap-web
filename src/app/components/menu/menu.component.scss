@@ -1,6 +1,8 @@
 mat-toolbar {
   color: #191a19;
   background-color: rgb(250 250 250);
+  display: flex;
+  justify-content: space-between;
 }
 
 mat-sidenav {
@@ -59,8 +61,14 @@ mat-sidenav-content {
   font-weight: normal;
 }
 
-.designation {
+.email {
   margin-top: 2px;
   font-size: 0.7rem;
   color: lightgrey;
+}
+
+.signout-btn {
+  &:hover {
+    cursor: pointer;
+  }
 }

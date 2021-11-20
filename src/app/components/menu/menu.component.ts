@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { IMe } from 'src/app/interfaces/me';
+import { removeAuthenticationToken } from 'src/app/utils/tokens';
+import { getUserMe } from 'src/app/utils/user';
 import { FormLoginModalComponent } from '../formLoginModal/form-login.modal.component';
 
 
@@ -10,12 +13,18 @@ import { FormLoginModalComponent } from '../formLoginModal/form-login.modal.comp
 })
 export class MenuComponent implements OnInit {
 
+  me: IMe = getUserMe()
+
   constructor(public dialog: MatDialog) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   openDialog() {
     this.dialog.open(FormLoginModalComponent);
+  }
+
+  signout() {
+    removeAuthenticationToken()
+    window.location.reload()
   }
 }
