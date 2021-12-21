@@ -14,13 +14,31 @@ import { NgForm } from "@angular/forms";
 })
 export class FormLoginModalComponent {
   hide = true;
+  isCreateModal = false
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: IModalData, private authService: LoginService) {}
 
-  async submitLoginForm(form: NgForm) {
-    const res = await this.authService.signin(form.value);
+  submitLoginForm(form: NgForm) {
+    this.isCreateModal ? this.signup(form) : this.signin(form)
+  }
+
+  async signin(form: NgForm) {
+    const res = await this.authService.signin(form.value) 
     const token = res.headers['authentication-token']
     setAuthenticationToken(token)
     window.location.reload();
+  }
+
+  async signup(form: NgForm) {
+    await this.authService.signup(form.value) 
+    this.isCreateModal = false;
+  }
+
+  openCreateUserModal() {
+    this.isCreateModal = true;
+  }
+
+  openLoginModal() {
+    this.isCreateModal = false;
   }
 }

@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { EventsComponent } from '../events/events.component';
 import { MenuComponent } from '../../components/menu/menu.component';
 import { FormLoginModalComponent } from '../../components/formLoginModal/form-login.modal.component';
+import { FormCreateEventModalComponent } from '../../components/formCreateEvent/form-create-event.modal.component';
 import { FormsModule } from '@angular/forms';
 
 
@@ -35,7 +36,8 @@ const components = [
   AppComponent,
   EventsComponent,
   MenuComponent,
-  FormLoginModalComponent
+  FormLoginModalComponent,
+  FormCreateEventModalComponent
 ]
 
 const bootstrap = [

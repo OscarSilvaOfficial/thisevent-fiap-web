@@ -4,6 +4,7 @@ import { IMe } from 'src/app/interfaces/me';
 import { removeAuthenticationToken } from 'src/app/utils/tokens';
 import { getUserMe } from 'src/app/utils/user';
 import { FormLoginModalComponent } from '../formLoginModal/form-login.modal.component';
+import { FormCreateEventModalComponent } from '../formCreateEvent/form-create-event.modal.component';
 
 
 @Component({
@@ -21,6 +22,10 @@ export class MenuComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(FormLoginModalComponent);
+  }
+
+  openCreateEventDialog() {
+    this.dialog.open(FormCreateEventModalComponent);
   }
 
   signout() {
