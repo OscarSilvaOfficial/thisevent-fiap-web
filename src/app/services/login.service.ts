@@ -13,9 +13,4 @@ export class LoginService extends AuthService {
     return response
   }
 
-  signup(user: IUser) {
-    const response = this.http.post('/users', user)
-    return response
-  }
-
 }

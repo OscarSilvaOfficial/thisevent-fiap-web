@@ -1,10 +1,11 @@
 import Axios from 'axios';
+import services from '../../consts'
 
 export class BaseService {
   baseUrl: string;
   http: any;
 
-  constructor(api_url = 'http://localhost:8080', http = Axios) {
+  constructor(api_url=services.api, http=Axios) {
     this.baseUrl = api_url
     this.http = http.create({
       baseURL: this.baseUrl,
@@ -20,7 +21,7 @@ export class AuthService {
   baseUrl: string;
   http: any;
 
-  constructor(api_url = 'http://localhost:5001/api', http = Axios) {
+  constructor(api_url=services.auth, http=Axios) {
     this.baseUrl = api_url
     this.http = http.create({
       baseURL: this.baseUrl,

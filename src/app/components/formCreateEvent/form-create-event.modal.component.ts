@@ -1,10 +1,9 @@
 import { Component, Inject } from "@angular/core";
 import { MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { IModalData } from "src/app/interfaces/modal";
-import { setAuthenticationToken } from 'src/app/utils/tokens';
-import { LoginService } from "src/app/services/login.service";
 import { ViewEncapsulation } from '@angular/core';
 import { NgForm } from "@angular/forms";
+import { EventsService } from "src/app/services/events.service";
 
 @Component({
   selector: 'form-create-event-modal-component',
@@ -15,13 +14,14 @@ import { NgForm } from "@angular/forms";
 export class FormCreateEventModalComponent {
   hide = true;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: IModalData, private authService: LoginService) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data: IModalData, private eventService: EventsService) {}
 
   submitLoginForm(form: NgForm) {
     this.createEvent(form)
   }
 
   async createEvent(form: NgForm) {
-    console.log(form.value)
+    const response = await this.eventService.create(form.value)
+    location.reload()
   }
 }
