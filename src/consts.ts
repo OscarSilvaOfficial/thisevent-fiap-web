@@ -5,6 +5,11 @@ const services: any = {
     api: 'http://localhost:8080',
     auth: 'http://localhost:5001/api',
     signup: 'http://localhost:5002/api'
+  },
+  'http://localhost/': {
+    api: 'http://localhost:8080',
+    auth: 'http://localhost:5001/api',
+    signup: 'http://localhost:5002/api'
   }
 }
 
