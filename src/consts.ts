@@ -11,10 +11,10 @@ const services: any = {
     auth: 'http://localhost:5001/api',
     signup: 'http://localhost:5002/api'
   },
-  'http://54.226.56.217/': {
-    api: 'http://54.226.56.217:8080',
-    auth: 'http://54.226.56.217:5001/api',
-    signup: 'http://54.226.56.217:5002/api'
+  'http://54.226.56.217/': { // [#IP_PUBLIC#]
+    api: 'http://54.226.56.217:8080', // [#IP_PUBLIC#]
+    auth: 'http://54.226.56.217:5001/api', // [#IP_PUBLIC#]
+    signup: 'http://54.226.56.217:5002/api' // [#IP_PUBLIC#]
   }
 }
 
